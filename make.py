@@ -49,6 +49,7 @@ async def update_life(id: int, life: LifeIn_Pydantic):
 
 # On a fait le delete qui sert a supprimer un post dans notre base de donné
 # pour ça on a besoin de l'ID
+# delete
 @app.delete('/life/{id}', response_model = Message, responses={404: {'model': HTTPNotFoundError}})
 async def delete_life(id: int):
     delete_obj = await LifeInput.filter(id=id).delete()
