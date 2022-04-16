@@ -54,4 +54,7 @@ async def delete_life(id: int):
     delete_obj = await LifeInput.filter(id=id).delete()
     if not delete_obj:
         raise HTTPException(status_code=404, detail= 'this life is not found')
-    return Message(message = 'Successfuly deleted')            
+    return Message(message = 'Le post a été supprimé') 
+
+
+
